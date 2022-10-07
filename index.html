@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="index.css">
     <script type="text/javascript" src="index.js"></script>
+    <script src="marked.min.js"></script>
 </head>
 <body>
 
@@ -42,8 +43,36 @@
             }</script>
 
 
+        <div style="margin: 12px">
+            <header>MarkdownEdit</header>
+        </div>
+        <div style="margin: 0 auto">
+            <div class="left" >
+                <textarea id="text" style=" 580px;height:1200px;float: left" oninput="document.getElementById('marked').innerHTML = marked.parse(document.getElementById('text').value)"></textarea>
+            </div>
+            <div class="right" style=" width:200px;height:700px;float: right" id="marked">
+
+            </div>
+        </div>
 
     </div>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+        <button class="tablinks"  onclick="openCity(event, 'Paris')">Paris</button>
+    </div>
+
+    <div id="London" class="tabcontent">
+        <textarea  id="txtarea1"></textarea>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <p id="ans">? </p>
+        <script>
+            document.getElementById('ans').innerHTML = marked.parse(document.getElementById('txtarea1').value)
+        </script>>
+    </div>
+
 
 
 
