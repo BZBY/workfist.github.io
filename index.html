@@ -1,8 +1,57 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>finrsr sdakj dsa </title>
-  <body >
-    DKSAJAF
-  </body>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+
+<div id = 'main'>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div id="mainCon">
+        <h2>Sidenav Push Example</h2>
+        <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+
+        <textarea name="txtAdCode" id="txtarea" rows="8" cols="40">
+    这里填入要执行的完整html代码
+    </textarea><br/>
+
+        <input type="button" onclick="runCode()" value="运行代码" />
+
+        <script type="text/javascript" language="javascript">
+            function runCode(){ //定义一个运行代码的函数，
+                var code = document.getElementById("txtarea").value;//即要运行的代码。
+                var newwin = window.open('', '', '');  //打开一个窗口并赋给变量newwin。
+                newwin.opener = null // 防止代码对论谈页面修改
+                newwin.document.write(code);  //向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
+                newwin.document.close();
+            }</script>
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+</body>
 </html>
