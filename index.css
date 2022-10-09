@@ -49,10 +49,19 @@
 }
 
 
+body {font-family: Arial;}
+
+/* Style the tab */
+.Text{
+    width:72%;
+    height:auto;
+    border: 5px solid #818181;
+}
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 1px solid #818181;
     background-color: #f1f1f1;
+    width:70%;
 }
 
 /* Style the buttons inside the tab */
@@ -83,4 +92,57 @@
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+.Text{
+    display:block;
+    height:300px;
+
+}
+
+
+#output1{
+        float: left;
+    border: 1px solid silver;
+    width: 300px;
+    height: 200px;
+}
+
+
+.ou{
+    float: left;
+    border: 1px solid silver;
+    width: 300px;
+    height: 200px;
+}
+#input1{
+    float: left;
+    border: 1px solid silver;
+    width: 300px;
+    height: 200px;
+}
+
+
+#textarea {
+
+    float:left;
+
+    margin:0 auto;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    font-size: 14px;
+
+    height: 200px;
+
+    line-height: 24px;
+
+}
+
+textarea {
+
+    outline: 0 none;
+
+
 }
