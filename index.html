@@ -3,77 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="index.css">
-    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="test.css">
+    <script type="text/javascript" src="test.js"></script>
     <script src="marked.min.js"></script>
 </head>
 <body>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; 隐藏</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
 
-<div id = 'main'>
-
-
-
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-    </div>
-
-    <div id="mainCon">
-
-        还没做好，请再给几天时间完善
-
-        <input type="button" onclick="runCode()" value="运行代码" />
-
-        <script type="text/javascript" language="javascript">
-            function runCode(){ //定义一个运行代码的函数，
-                var code = document.getElementById("txtarea").value;//即要运行的代码。
-                var newwin = window.open('', '', '');  //打开一个窗口并赋给变量newwin。
-                newwin.opener = null // 防止代码对论谈页面修改
-                newwin.document.write(code);  //向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
-                newwin.document.close();
-            }</script>
+<div id="main">
 
 
-        <div style="margin: 12px">
-            <header>MarkdownEdit</header>
-        </div>
-        <div style="margin: 0 auto">
-            <div class="left" >
-                <textarea id="text" style=" 580px;height:1200px;float: left" oninput="document.getElementById('marked').innerHTML = marked.parse(document.getElementById('text').value)"></textarea>
-            </div>
-            <div class="right" style=" width:200px;height:700px;float: right" id="marked">
-
-            </div>
-        </div>
-
-    </div>
-
+    <div class = "Text">
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-        <button class="tablinks"  onclick="openCity(event, 'Paris')">Paris</button>
-    </div>
+        <button class="tablinks" onclick="openCity(event, 'London')">编号：{选中}</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">文本模式</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">预览模式</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">上移</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">下移</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">在上方新建</button>
+        <button class="tablinks" onclick="openCity(event, 'London')">在下方新建</button>
+
+     </div>
 
     <div id="London" class="tabcontent">
-        <textarea  id="txtarea1"></textarea>
+
+
+        <textarea id="textarea" placeholder="请输入内容" oninput="document.getElementById('out').innerHTML = marked.parse(document.getElementById('textarea').value)"></textarea>
+
+        <script>
+            var text = document.getElementById("textarea");
+
+            autoTextarea(text);// 调用
+
+        </script>
+
     </div>
 
     <div id="Paris" class="tabcontent">
-        <p id="ans">? </p>
-        <script>
-            document.getElementById('ans').innerHTML = marked.parse(document.getElementById('txtarea1').value)
-        </script>>
+
+        <p id = 'out'></p>
+    </div>
     </div>
 
 
 
 
-
-
-
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 展开</span>
 </div>
+
+
+
 
 
 </body>
